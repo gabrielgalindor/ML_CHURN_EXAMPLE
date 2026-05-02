@@ -122,6 +122,24 @@ Para trabajar remotamente en la VM:
 jupyter lab --ip 0.0.0.0 --port 8888 --no-browser
 ```
 
+Si quieres dejar Jupyter ejecutándose en segundo plano:
+
+```bash
+nohup jupyter lab \
+  --ip 0.0.0.0 \
+  --port 8888 \
+  --no-browser \
+  --allow-root \
+  --ServerApp.token='jY3VgAYDQJFi41W2yI' \
+> jupyter.log 2>&1 &
+```
+
+Puedes revisar el log con:
+
+```bash
+tail -f jupyter.log
+```
+
 ### Acceso desde navegador
 
 Abre en tu navegador:
@@ -150,6 +168,25 @@ Para ver experimentos y modelos registrados:
 
 ```bash
 mlflow ui --host 0.0.0.0 --port 5000
+```
+
+Si quieres dejar MLflow ejecutándose en segundo plano:
+
+```bash
+nohup mlflow ui \
+  --host 0.0.0.0 \
+  --port 5000 \
+  --backend-store-uri sqlite:///mlflow.db \
+  --default-artifact-root ./mlruns \
+  --allowed-hosts '*' \
+  --cors-allowed-origins '*' \
+> mlflow.log 2>&1 &
+```
+
+Puedes revisar el log con:
+
+```bash
+tail -f mlflow.log
 ```
 
 Luego abre:
@@ -184,10 +221,35 @@ Levantar Jupyter:
 jupyter lab --ip 0.0.0.0 --port 8888 --no-browser
 ```
 
+Levantar Jupyter en background:
+
+```bash
+nohup jupyter lab \
+  --ip 0.0.0.0 \
+  --port 8888 \
+  --no-browser \
+  --allow-root \
+  --ServerApp.token='jY3VgAYDQJFi41W2yI' \
+> jupyter.log 2>&1 &
+```
+
 Levantar MLflow:
 
 ```bash
 mlflow ui --host 0.0.0.0 --port 5000
+```
+
+Levantar MLflow en background:
+
+```bash
+nohup mlflow ui \
+  --host 0.0.0.0 \
+  --port 5000 \
+  --backend-store-uri sqlite:///mlflow.db \
+  --default-artifact-root ./mlruns \
+  --allowed-hosts '*' \
+  --cors-allowed-origins '*' \
+> mlflow.log 2>&1 &
 ```
 
 ## 13. Solución de problemas
