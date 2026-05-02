@@ -15,6 +15,20 @@ El objetivo es poder levantarlo rápido en una máquina virtual como:
 - `requirements.txt`: dependencias del entorno
 - `telco_churn.csv`: dataset esperado en la raíz del proyecto
 
+## Requisitos mínimos sugeridos de máquina
+
+Para una demo fluida en una máquina virtual, se recomienda como mínimo:
+
+- `RAM`: 4 GB
+- `Procesador`: 2 vCPU
+- `Almacenamiento`: 20 GB SSD
+
+Configuración recomendada para una experiencia más cómoda:
+
+- `RAM`: 8 GB
+- `Procesador`: 2 a 4 vCPU
+- `Almacenamiento`: 30 GB SSD
+
 ## Requisitos previos
 
 - Python 3.11 o superior
